@@ -8,7 +8,12 @@
       "Bash(1:*)",
       "Bash(npm install:*)",
       "Bash(npx:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(iconv:*)",
+      "Bash(xxd /c/code/vader/.env)",
+      "Bash(node:*)",
+      "Bash(python3:*)",
+      "Bash(xxd .env)"
     ]
   },
   "disabledMcpjsonServers": [
