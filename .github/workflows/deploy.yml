@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 # Required for the deploy-pages action to write to GitHub Pages
 permissions:
