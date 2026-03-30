@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -v '^\\\\.$')",
+      "Bash(grep -v '^\\\\.\\\\.$')",
+      "Bash(git ls-tree:*)",
+      "Bash(npm create:*)",
+      "Bash(1:*)",
+      "Bash(npm install:*)",
+      "Bash(npx:*)",
+      "Bash(npm run:*)"
+    ]
+  },
+  "disabledMcpjsonServers": [
+    "chrome-devtools"
+  ]
+}
