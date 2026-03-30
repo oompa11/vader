@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Class-based dark mode: applies dark: utilities when <html> has the .dark class */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme inline {
   --color-background: #ffffff;
   --color-foreground: #0a0a0f;
@@ -23,13 +26,37 @@
   --font-body: "Inter", sans-serif;
 }
 
+/* ── Dark mode token overrides ──────────────────────────────── */
+html.dark {
+  --color-background: #0d0d1a;
+  --color-foreground: #ededff;
+  --color-card: #16162a;
+  --color-card-foreground: #ededff;
+  --color-muted: #1e1e35;
+  --color-muted-foreground: #9ca3af;
+  --color-secondary: #1f1045;
+  --color-secondary-foreground: #c4b5fd;
+  --color-border: #2b2b4a;
+  --color-input: #2b2b4a;
+}
+
+/* ── Base styles ─────────────────────────────────────────────── */
+html {
+  color-scheme: light;
+  /* Smooth transition when .dark class is toggled */
+  transition: background-color 0.25s ease, color 0.15s ease;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-html,
 body {
   margin: 0;
   padding: 0;
@@ -38,6 +65,7 @@ body {
   color: var(--color-foreground);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.25s ease, color 0.15s ease;
 }
 
 #root {
@@ -46,7 +74,7 @@ body {
   flex-direction: column;
 }
 
-/* Focus-visible ring for accessibility */
+/* ── Accessibility ───────────────────────────────────────────── */
 :focus-visible {
   outline: 3px solid var(--color-ring);
   outline-offset: 2px;

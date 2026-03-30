@@ -44,7 +44,7 @@ export function SearchSection() {
           autoCorrect="off"
           spellCheck="false"
           disabled={isLoading}
-          className="h-12 flex-1 border-2 border-violet-200 bg-white px-4 text-base shadow-sm transition-colors placeholder:text-gray-400 focus-visible:border-violet-500 focus-visible:ring-violet-500 disabled:opacity-60"
+          className="h-12 flex-1 border-2 border-violet-200 bg-white px-4 text-base text-foreground shadow-sm transition-colors duration-200 placeholder:text-gray-400 focus-visible:border-violet-500 focus-visible:ring-violet-500 disabled:opacity-60 dark:border-violet-800 dark:bg-slate-900 dark:placeholder:text-slate-500"
           aria-label="Enter city name"
         />
         <Button
@@ -79,7 +79,7 @@ export function SearchSection() {
         {status === 'error' && error && (
           <div
             role="alert"
-            className="flex items-start gap-3 rounded-xl border border-red-200 bg-red-50 px-5 py-4 text-red-700"
+            className="flex items-start gap-3 rounded-xl border border-red-200 bg-red-50 px-5 py-4 text-red-700 dark:border-red-800 dark:bg-red-950/60 dark:text-red-400"
           >
             <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" />
             <p className="text-sm font-medium">{error}</p>

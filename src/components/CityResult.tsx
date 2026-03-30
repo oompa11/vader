@@ -14,7 +14,7 @@ export function CityResult({ data }: CityResultProps) {
     <div className="flex flex-col gap-4">
       {/* ── Current conditions ── */}
       <Card
-        className="overflow-hidden border-0 shadow-xl"
+        className="overflow-hidden border-0 shadow-xl transition-colors duration-200"
         role="region"
         aria-label={`Current weather for ${current.cityName}`}
       >
@@ -25,14 +25,14 @@ export function CityResult({ data }: CityResultProps) {
         <CardContent className="px-6 py-5">
           {/* City + country */}
           <div className="mb-4 flex items-center gap-2">
-            <MapPin className="h-5 w-5 shrink-0 text-violet-600" aria-hidden="true" />
+            <MapPin className="h-5 w-5 shrink-0 text-violet-500" aria-hidden="true" />
             <h2
               className="text-4xl text-foreground"
               style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.06em' }}
             >
               {current.cityName}
             </h2>
-            <span className="ml-1 rounded bg-violet-100 px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-violet-700">
+            <span className="ml-1 rounded bg-violet-100 px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-violet-700 dark:bg-violet-900/50 dark:text-violet-300">
               {current.country}
             </span>
           </div>
@@ -83,7 +83,7 @@ export function CityResult({ data }: CityResultProps) {
       {/* ── 5-day forecast ── */}
       {forecast.length > 0 && (
         <Card
-          className="overflow-hidden border-0 shadow-xl"
+          className="overflow-hidden border-0 shadow-xl transition-colors duration-200"
           role="region"
           aria-label="5-day forecast"
         >
@@ -92,9 +92,7 @@ export function CityResult({ data }: CityResultProps) {
             aria-hidden="true"
           />
           <CardContent className="px-6 py-5">
-            <h3
-              className="mb-4 text-xs font-bold uppercase tracking-widest text-muted-foreground"
-            >
+            <h3 className="mb-4 text-xs font-bold uppercase tracking-widest text-muted-foreground">
               5-Day Forecast
             </h3>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
@@ -129,8 +127,8 @@ function StatBadge({
 
 function ForecastTile({ day }: { day: WeatherData['forecast'][number] }) {
   return (
-    <div className="flex flex-col items-center rounded-xl bg-gradient-to-b from-violet-50 to-cyan-50 px-3 py-3 text-center">
-      <p className="text-xs font-bold uppercase tracking-wide text-violet-700">
+    <div className="flex flex-col items-center rounded-xl bg-gradient-to-b from-violet-50 to-cyan-50 px-3 py-3 text-center transition-colors duration-200 dark:from-violet-950/60 dark:to-cyan-950/60">
+      <p className="text-xs font-bold uppercase tracking-wide text-violet-700 dark:text-violet-300">
         {day.dateLabel.split(',')[0]}
       </p>
       <p className="text-xs text-muted-foreground">
